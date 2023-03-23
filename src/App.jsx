@@ -11,11 +11,19 @@ function App() {
   // useEffect(() => {
   //   console.log("App mounted")
   // }, [])
+  const btn = {
+    color: "red",
+    backgroundColor: "green",
+  };
   return (
     <>
-      <Form />
-      <button onClick={() => setPage("users")}>Users</button>
-      <button onClick={() => setPage("photos")}>Photos</button>
+      <Form setPage={setPage} />
+      <button style={btn} onClick={() => setPage("users")}>
+        Users
+      </button>
+      <button style={{ color: "blue" }} onClick={() => setPage("photos")}>
+        Photos
+      </button>
       {page === "users" && <Users />}
       {page === "photos" && <Photos />}
     </>
