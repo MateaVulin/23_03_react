@@ -1,10 +1,16 @@
 import React from "react";
-const PhotosCard = ({ title, thumbnailUrl }) => {
+import { Card } from "react-bootstrap";
+
+const PhotosCard = ({ title, thumbnailUrl, id }) => {
   return (
-    <div>
-      <h2>{title}</h2>
-      <img src={thumbnailUrl} alt="" />
-    </div>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={thumbnailUrl} />
+      <Card.Body>
+        <Card.Title>{id}</Card.Title>
+        <Card.Text>{title}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
+
 export default PhotosCard;
